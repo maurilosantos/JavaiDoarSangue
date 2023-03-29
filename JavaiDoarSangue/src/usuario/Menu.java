@@ -16,7 +16,7 @@ public class Menu {
 		while (true) {
 
 			System.out.println(Cores.TEXT_WHITE_BOLD_BRIGHT + Cores.ANSI_RED_BACKGROUND
-					+ "*****************************************************");
+					+ "******************************************************");
 			System.out.println("                                                     ");
 			System.out.println("                Projeto JAVai Doar SANGUE            ");
 			System.out.println("                                                     ");
