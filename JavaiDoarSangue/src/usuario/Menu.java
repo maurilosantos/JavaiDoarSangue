@@ -403,7 +403,7 @@ public class Menu {
 		case 17:
 				System.out.println("\n Informações sobre Agendamento ");
 
-				keyPress();
+				keyPress(); 
 				break;
 		case 18:
 				System.out.println("\n Missão, Visão e Valores ");
