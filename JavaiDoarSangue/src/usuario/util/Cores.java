@@ -4,7 +4,7 @@ public class Cores {
 	//Reset Color
 	public static final String TEXT_RESET = "\u001B[0m";
 
-	//Text Color
+	//Text Color   
 	public static final String TEXT_BLACK = "\u001B[30m";
 	public static final String TEXT_RED = "\u001B[31m";
 	public static final String TEXT_GREEN = "\u001B[32m";
