@@ -7,6 +7,7 @@ public abstract class Usuario {
 	private String estado;
 	private int tipo;
 	
+	
 	// constructor
 
 	public Usuario(int user, String nome, String cidade, String estado, int tipo) {
@@ -68,6 +69,24 @@ public abstract class Usuario {
 		
 		System.out.println("\nUser: "+user+"\nNome: "+nome+"\nCidade: "+cidade+"\nEstado: "+estado);
 	}
+
+	public void visualizarApto() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void visualizarEstoque() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	
+	
+
+	
+
+	
 
 
 }

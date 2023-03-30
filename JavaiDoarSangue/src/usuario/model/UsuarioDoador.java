@@ -66,21 +66,20 @@ public class UsuarioDoador extends Usuario {
 	@Override
 	public void visualizar() {
 		super.visualizar();
-		System.out.println("\nTipo Sanguíneo: " + tipoSanguineo + "\nSexo: " + sexo + "\nPeso: " + peso + "\n");
-
+		System.out.println("Tipo Sanguíneo: " + tipoSanguineo + "\nSexo: " + sexo + "\nPeso: " + peso + "\n");
 	}
 
 	
-	public void verificarApto(char M, char F, String Sim) {
+	public void visualizarApto() {
 
-		if (this.idade >= 17 && this.idade <= 69 && this.ultimaDoacaoMeses >= 2 && sexo == M) {
-			System.out.println("\n Apto. ");	
-		}
 		
-		else if (this.idade >= 17 && this.idade <= 69 && this.ultimaDoacaoMeses >= 3 && sexo == F ) {
-			System.out.println("\n Apta. ");	
-		} else {
-			System.out.println("\nNão Apto(a) ");
+		if (this.idade >= 17 && this.idade <= 69 && this.ultimaDoacaoMeses >= 3 && this.peso >= 50) {
+			System.out.println("\nApto(a): ");
+			visualizar();
+			}
+		 else {
+			System.out.println("\nNão Apto(a): ");
+			visualizar();
 		}
 
 	}

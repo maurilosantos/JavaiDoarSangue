@@ -1,7 +1,9 @@
 package usuario;
 
 import java.io.IOException;
+
 import java.util.InputMismatchException;
+
 import java.util.Scanner;
 
 import usuario.model.UsuarioDoador;
@@ -16,8 +18,10 @@ public class Menu {
 		
 		UsuarioController usuarios = new UsuarioController();
 
-		int duvida, opcao = 0, tipo, idade, peso, ultimaDoacaoMeses, ultimaCirurgiaMeses, user, numero = 0;
-		String nome, cidade, estado, recentementeDoente, tipoSanguineo, site, rua, telefone;
+		int duvida, opcao = 0, tipo, idade, peso, ultimaDoacaoMeses, ultimaCirurgiaMeses, user, numero = 0,
+				quantidadeDeBolsas, tipoAmais, tipoAmenos, tipoBmais, tipoBmenos, tipoABmais, tipoABmenos,
+				tipoOmais, tipoOmenos;
+		String nome, cidade, estado, recentementeDoente, tipoSanguineo, site, rua, telefone, nomeHemocentro, cidadeHemocentro, contatoHemocentro;
 		char sexo;
 
 		while (true) {
@@ -25,7 +29,7 @@ public class Menu {
 			System.out.println(Cores.TEXT_WHITE_BOLD_BRIGHT + Cores.ANSI_RED_BACKGROUND
 					+ "******************************************************");
 			System.out.println("                                                     ");
-			System.out.println("                Projeto JAVai Doar SANGUE            ");
+			System.out.println("                Projeto JaVai Doar SANGUE            ");
 			System.out.println("                                                     ");
 			System.out.println("*****************************************************");
 			System.out.println("                          DOADOR                     ");
@@ -41,21 +45,21 @@ public class Menu {
 			System.out.println("                                                     ");
 			System.out.println("            7 -> Cadastro Hemocentro                 ");
 			System.out.println("            8 -> Listar Hemocentro                   ");
-			System.out.println("            9 -> Atualizar Dados do Hemocentro        ");
+			System.out.println("            9 -> Atualizar Dados do Hemocentro       ");
 			System.out.println("           10 -> Listar Doadores                     ");
-			System.out.println("           11 - Buscar Doadores Aptos                ");
+			System.out.println("           11 -> Buscar Doadores Aptos               ");
 			System.out.println("           12 -> Buscar Doadores por User            ");
-			System.out.println("           13 -> Apagar Conta                         ");
+			System.out.println("           13 -> Apagar Conta                        ");
 			System.out.println("           14 -> Sair                                ");
 			System.out.println("                                                     ");
-			System.out.println("                    JAVai Doar Sangue                ");
+			System.out.println("                    JaVai Doar Sangue                ");
 			System.out.println("                                                     ");
-			System.out.println("           15 - Dúvidas Frequentes                   ");
-			System.out.println("           16 - Indique um Hemocentro                ");
-			System.out.println("           17 - Informações sobre Agendamento        ");
-			System.out.println("           18 - Missão, Visão e Valores              ");
-			System.out.println("           19 - Nossa História                       ");
-			System.out.println("           20 - Novidades                            ");
+			System.out.println("           15 -> Dúvidas Frequentes                  ");
+			System.out.println("           16 -  Indique um Hemocentro               ");
+			System.out.println("           17 -> Informações sobre Estoque           ");
+			System.out.println("           18 -> Missão, Visão e Valores             ");
+			System.out.println("           19 -> Nossa História                      ");
+			System.out.println("           20 -> Novidades                           ");
 			System.out.println("                                                     ");
 			System.out.println("*****************************************************");
 			System.out.println("Entre com a opção desejada:                          ");
@@ -118,8 +122,7 @@ public class Menu {
 					
 				System.out.println("\nQuantos meses desde a última doação? ");
 				ultimaDoacaoMeses = leia.nextInt(); 
-				
-					
+								
 					
 				usuarios.cadastrar(new UsuarioDoador(user, nome, cidade, estado, tipo, tipoSanguineo, idade, peso, sexo, ultimaDoacaoMeses));
 				} else if (tipo == 2) {
@@ -147,7 +150,37 @@ public class Menu {
 				System.out.println("\nDigite o Telefone: ");
 				telefone = leia.nextLine();
 				
-				usuarios.cadastrar(new UsuarioHemocentro(user, nome, cidade, estado, tipo, site, rua, telefone));
+				System.out.println("\nDigite a Quantidade de Bolsas de Sangue em Estoque Atual: ");
+				quantidadeDeBolsas = leia.nextInt();
+				
+				System.out.println("\nDigite a Quantidade de Bolsas tipo A+: ");
+				tipoAmais = leia.nextInt();
+				
+				System.out.println("\nDigite a Quantidade de Bolsas tipo A-: ");
+				tipoAmenos = leia.nextInt();
+				
+				System.out.println("\nDigite a Quantidade de Bolsas tipo B+: ");
+				tipoBmais = leia.nextInt();
+				
+				System.out.println("\nDigite a Quantidade de Bolsas tipo B-: ");
+				tipoBmenos = leia.nextInt();
+				
+				System.out.println("\nDigite a Quantidade de Bolsas tipo AB+: ");
+				tipoABmais = leia.nextInt();
+				
+				System.out.println("\nDigite a Quantidade de Bolsas tipo AB-: ");
+				tipoABmenos = leia.nextInt();
+				
+				System.out.println("\nDigite a Quantidade de Bolsas tipo O+: ");
+				tipoOmais = leia.nextInt();
+				
+				System.out.println("\nDigite a Quantidade de Bolsas tipo O-: ");
+				tipoOmenos = leia.nextInt();
+				
+				
+				
+				usuarios.cadastrar(new UsuarioHemocentro(user, nome, cidade, estado, tipo, site, rua, telefone, quantidadeDeBolsas, tipoAmais, tipoAmenos, tipoBmais, tipoBmenos, tipoABmais, tipoABmenos,
+						tipoOmais, tipoOmenos));
 					
 					
 				}
@@ -230,7 +263,36 @@ public class Menu {
 							System.out.println("\nDigite o Telefone: ");
 							telefone = leia.nextLine();
 							
-							usuarios.atualizar(new UsuarioHemocentro(user, nome, cidade, estado, tipo, site, rua, telefone));
+							System.out.println("\nDigite a Quantidade de Bolsas de Sangue em Estoque: ");
+							quantidadeDeBolsas = leia.nextInt();
+							
+							System.out.println("\nDigite a Quantidade de Bolsas tipo A+: ");
+							tipoAmais = leia.nextInt();
+							
+							System.out.println("\nDigite a Quantidade de Bolsas tipo A-: ");
+							tipoAmenos = leia.nextInt();
+							
+							System.out.println("\nDigite a Quantidade de Bolsas tipo B+: ");
+							tipoBmais = leia.nextInt();
+							
+							System.out.println("\nDigite a Quantidade de Bolsas tipo B-: ");
+							tipoBmenos = leia.nextInt();
+							
+							System.out.println("\nDigite a Quantidade de Bolsas tipo AB+: ");
+							tipoABmais = leia.nextInt();
+							
+							System.out.println("\nDigite a Quantidade de Bolsas tipo AB-: ");
+							tipoABmenos = leia.nextInt();
+							
+							System.out.println("\nDigite a Quantidade de Bolsas tipo O+: ");
+							tipoOmais = leia.nextInt();
+							
+							System.out.println("\nDigite a Quantidade de Bolsas tipo O-: ");
+							tipoOmenos = leia.nextInt();
+							
+							
+							usuarios.atualizar(new UsuarioHemocentro(user, nome, cidade, estado, tipo, site, rua, telefone, quantidadeDeBolsas, tipoAmais, tipoAmenos, tipoBmais, tipoBmenos, tipoABmais, tipoABmenos,
+									tipoOmais, tipoOmenos));
 						}
 						default ->{
 							System.out.println("Tipo de usuário inválido!");
@@ -349,7 +411,36 @@ public class Menu {
 							System.out.println("\nDigite o Telefone: ");
 							telefone = leia.nextLine();
 							
-							usuarios.atualizar(new UsuarioHemocentro(user, nome, cidade, estado, tipo, site, rua, telefone));
+							System.out.println("\nDigite a Quantidade de Bolsas de Sangue em Estoque: ");
+							quantidadeDeBolsas = leia.nextInt();
+							
+							System.out.println("\nDigite a Quantidade de Bolsas tipo A+: ");
+							tipoAmais = leia.nextInt();
+							
+							System.out.println("\nDigite a Quantidade de Bolsas tipo A-: ");
+							tipoAmenos = leia.nextInt();
+							
+							System.out.println("\nDigite a Quantidade de Bolsas tipo B+: ");
+							tipoBmais = leia.nextInt();
+							
+							System.out.println("\nDigite a Quantidade de Bolsas tipo B-: ");
+							tipoBmenos = leia.nextInt();
+							
+							System.out.println("\nDigite a Quantidade de Bolsas tipo AB+: ");
+							tipoABmais = leia.nextInt();
+							
+							System.out.println("\nDigite a Quantidade de Bolsas tipo AB-: ");
+							tipoABmenos = leia.nextInt();
+							
+							System.out.println("\nDigite a Quantidade de Bolsas tipo O+: ");
+							tipoOmais = leia.nextInt();
+							
+							System.out.println("\nDigite a Quantidade de Bolsas tipo O-: ");
+							tipoOmenos = leia.nextInt();
+							
+							
+							usuarios.atualizar(new UsuarioHemocentro(user, nome, cidade, estado, tipo, site, rua, telefone, quantidadeDeBolsas, tipoAmais, tipoAmenos, tipoBmais, tipoBmenos, tipoABmais, tipoABmenos,
+									tipoOmais, tipoOmenos));
 						}
 						default ->{
 							System.out.println("Tipo de usuário inválido!");
@@ -373,6 +464,8 @@ public class Menu {
 				break;
 		case 11:
 				System.out.println("\n Listar Doadores Aptos ");
+				
+				usuarios.listarDoadoresAptos();
 
 				keyPress();
 				break;
@@ -667,13 +760,27 @@ public class Menu {
 				keyPress();
 				break;
 		case 16:
-				System.out.println("\n Indique um Hemocentro ");
+				System.out.println("\nIndique um Hemocentro ");
+				
+				System.out.println("\nEntre com o nome do Hemocentro: ");
+				nomeHemocentro = leia.nextLine();
+				leia.nextLine();
+				
+				System.out.println("\nEntre com a cidade do Hemocentro: ");
+				cidadeHemocentro = leia.nextLine();
+				
+				
+				System.out.println("\nEntre com o contado (email/telefone): ");
+				contatoHemocentro = leia.nextLine();							
+		         
 
 				keyPress();
 				break;
 		case 17:
-				System.out.println("\n Informações sobre Agendamento ");
-
+				System.out.println("\nInformações sobre Estoque: ");
+				
+				usuarios.visualizarEstoquePorSangue();
+								
 				keyPress(); 
 				break;
 		case 18:

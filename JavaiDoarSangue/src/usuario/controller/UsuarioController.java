@@ -31,10 +31,24 @@ public class UsuarioController implements UsuarioRepository {
 		}
 		
 	}
+	
+	@Override
+	public void visualizarEstoquePorSangue() {
+		for (var usuario : listaUsuarios) {
+			if(usuario.getTipo() == 2) {
+			usuario.visualizarEstoque();
+			}
+		}
+		
+	}
 
 	@Override
 	public void listarDoadoresAptos() {
-		// TODO Auto-generated method stub
+		for (var usuario : listaUsuarios) {
+			if(usuario.getTipo() == 1) {
+			usuario.visualizarApto();
+			}
+		}
 		
 	}
 
