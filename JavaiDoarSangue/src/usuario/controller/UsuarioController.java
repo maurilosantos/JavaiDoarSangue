@@ -7,13 +7,20 @@ import usuario.repository.UsuarioRepository;
 public class UsuarioController implements UsuarioRepository {
 	private ArrayList<Usuario> listaUsuarios = new ArrayList<Usuario>();
 	
-	
-	int numero =0;
+	String cidade;
+	int user =0;
 	
 	@Override
-	public void ProcurarDoadoresPorCidade(String cidade) {
+	public void ProcurarDoadoresPorUser(int user) {
 		
-	}
+		 var usuario = buscarNaCollection(user);
+			
+			if (usuario != null)
+				usuario.visualizar();
+			else
+				System.out.println("\nA Conta não foi encontrada!");
+    }
+	
 
 	@Override
 	public void listarHemocentros() {
@@ -61,17 +68,25 @@ public class UsuarioController implements UsuarioRepository {
 		}
 
 	@Override
-	public void deletar(int num) {
-		// TODO Auto-generated method stub
+	public void deletar(int user) {
+		 var usuario = buscarNaCollection(user);
+			
+			if (usuario != null) {
+				if(listaUsuarios.remove(usuario) == true)
+					System.out.println("\nA Conta numero: " + user + " foi deletada com sucesso!");
+			}else
+				System.out.println("\nA Conta numero: " + user + " não foi encontrada!");
 		
 	}
 	
-	// Métodos Auxiliares
+	// METODOS AUXILIARES ------------------------------------
 	
-	// Buscar usuarios
-	public Usuario buscarNaCollection(int numero) {
+	
+	
+	// Buscar usuarios por user
+	public Usuario buscarNaCollection(int user) {
 		for (var usuario : listaUsuarios) {
-			if (usuario.getUser() == numero) {
+			if (usuario.getUser() == user) {
 				return usuario;
 			}
 		}
@@ -79,19 +94,30 @@ public class UsuarioController implements UsuarioRepository {
 		return null;
 	}
 	
+	// Buscar usuarios por cidade
+		public Usuario buscarNaCollectionCidade(String cidade) {
+			for (var usuario : listaUsuarios) {
+				if (usuario.getCidade() == cidade) {
+					return usuario;
+				}
+			}
+			
+			return null;
+		}
+	
 		//  Método para gerar automaticamente o Número do Usuário
 	
-		public int gerarNumero() {
-		return ++ numero;
+		public int gerarUser() {
+		return ++ user;
 	}
 		
 		/**
 		 * Método para retornar o Tipo da Conta
 		 * */
-		public int retornaTipo(int numero) {
-			for (var conta : listaUsuarios) {
-				if (conta.getUser() == numero) {
-					return conta.getTipo();
+		public int retornaTipo(int user) {
+			for (var usuario : listaUsuarios) {
+				if (usuario.getUser() == user) {
+					return usuario.getTipo();
 				}
 			}
 			

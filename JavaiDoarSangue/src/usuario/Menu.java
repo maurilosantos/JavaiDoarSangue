@@ -30,22 +30,23 @@ public class Menu {
 			System.out.println("*****************************************************");
 			System.out.println("                          DOADOR                     ");
 			System.out.println("                                                     ");
-			System.out.println("            1 - Cadastro Doador -                    ");
-			System.out.println("            2 - Listar Doadores   -                  ");
-			System.out.println("            4 - Atualizar Dados                      ");
-			System.out.println("            5 - Apagar Conta                         ");
-			System.out.println("            6 - Sair                                 ");
+			System.out.println("            1 -> Cadastro Doador                     ");
+			System.out.println("            2 -> Listar Doadores                     ");
+			System.out.println("            3 -> Atualizar Dados                     ");
+			System.out.println("            4 -> Apagar Conta                        ");
+			System.out.println("            5 -> Buscar Doadores por User            ");
+			System.out.println("            6 -> Sair                                ");
 			System.out.println("                                                     ");
 			System.out.println("                        HEMOCENTRO                   ");
 			System.out.println("                                                     ");
-			System.out.println("            7 - Cadastro Hemocentro  -               ");
-			System.out.println("            8 - Listar Hemocentro  -                 ");
-			System.out.println("            9 - Atualizar Dados do Hemocentro        ");
-			System.out.println("           10 - Listar Doadores                      ");
+			System.out.println("            7 -> Cadastro Hemocentro                 ");
+			System.out.println("            8 -> Listar Hemocentro                   ");
+			System.out.println("            9 -> Atualizar Dados do Hemocentro        ");
+			System.out.println("           10 -> Listar Doadores                     ");
 			System.out.println("           11 - Buscar Doadores Aptos                ");
-			System.out.println("           12 - Buscar Doadores por Cidade           ");
-			System.out.println("           13 - Apagar Conta                         ");
-			System.out.println("           14 - Sair                                 ");
+			System.out.println("           12 -> Buscar Doadores por User            ");
+			System.out.println("           13 -> Apagar Conta                         ");
+			System.out.println("           14 -> Sair                                ");
 			System.out.println("                                                     ");
 			System.out.println("                    JAVai Doar Sangue                ");
 			System.out.println("                                                     ");
@@ -157,66 +158,35 @@ public class Menu {
 		keyPress();
 		break;
 		case 2:
-				System.out.println("\n Listrar Doadores: ");
+				System.out.println("\n TODOS OS DOADORES: ");
 				usuarios.listarDoadores();
-				
-				
 				
 				keyPress();
 				break;
 				
 		case 3:
-				System.out.println("\n Atualizar Dados e");
-
-				keyPress();
-				break;
-		case 4:
-				System.out.println("\n Apagar Conta");
-
-				keyPress();
-				break;
-		case 5:
-				System.out.println("\n Sair ");
-
-				keyPress();
-				break;
-		case 6: System.out.println(" ");
-		keyPress();
-		break;
-		case 7: System.out.println(" ");
-		keyPress();
-		break;
-		case 8:
-			
-				System.out.println("\n Todos os Hemocentros Cadastrados: ");
-				usuarios.listarHemocentros();
-
-
-				keyPress();
-				break;
-		case 9:
-				System.out.println("\n Atualizar Dados: ");
-								
-						
+				System.out.println("\n ATUALIZAR DADOS: ");
+				
 				System.out.println("Digite o user da conta: ");
 				user = leia.nextInt();
+				leia.nextLine();
 				
 				if (usuarios.buscarNaCollection(user) != null) {
 					
 					System.out.println("Digite o Nome: ");
 					nome = leia.nextLine();
-					leia.nextLine();
+					
 					
 					System.out.println("Digite Cidade: ");
-					leia.nextLine();
 					cidade = leia.nextLine();
 					
 						
 					System.out.println("Digite Estado: ");
 					estado = leia.nextLine();
-					leia.nextLine();
 					
-					tipo = usuarios.retornaTipo(numero);
+					
+					
+					tipo = usuarios.retornaTipo(user);
 					
 					switch(tipo) {
 						case 1 -> {
@@ -263,7 +233,126 @@ public class Menu {
 							usuarios.atualizar(new UsuarioHemocentro(user, nome, cidade, estado, tipo, site, rua, telefone));
 						}
 						default ->{
-							System.out.println("Tipo de conta inválido!");
+							System.out.println("Tipo de usuário inválido!");
+						}
+					}
+					
+				} else
+					System.out.println("\nConta não encontrada!");
+
+				keyPress();
+				break;
+		case 4:
+				System.out.println("\n APAGAR CONTA DOADOR: ");
+				System.out.println(" ");
+				
+				System.out.println("Digite o user do Doador: ");
+				user = leia.nextInt();
+					
+				usuarios.deletar(user);
+				
+				
+				keyPress();
+				break;
+		case 5:
+				System.out.println("\n DOADORES POR USER: ");
+				System.out.println(" ");
+				System.out.println("Digite o user: ");
+				user = leia.nextInt();
+				leia.nextLine();
+				
+				usuarios.ProcurarDoadoresPorUser(user);
+				
+				
+
+				keyPress();
+				break;
+		case 6: System.out.println(" ");
+		keyPress();
+		break;
+		case 7: System.out.println(" ");
+		keyPress();
+		break;
+		
+		case 8:
+			
+				System.out.println("\n TODOS HEMOCENTROS CADASTRADOS: ");
+				usuarios.listarHemocentros();
+
+
+				keyPress();
+				break;
+		case 9:
+				System.out.println("\n Atualizar Dados: ");
+								
+						
+				System.out.println("Digite o user da conta: ");
+				user = leia.nextInt();
+				leia.nextLine();
+				
+				if (usuarios.buscarNaCollection(user) != null) {
+					
+					System.out.println("Digite o Nome: ");
+					nome = leia.nextLine();
+					
+					
+					System.out.println("Digite Cidade: ");
+					cidade = leia.nextLine();
+					
+						
+					System.out.println("Digite Estado: ");
+					estado = leia.nextLine();
+					
+					
+					
+					tipo = usuarios.retornaTipo(user);
+					
+					switch(tipo) {
+						case 1 -> {
+							System.out.println("Tipo Sanguíneo: ");
+							tipoSanguineo = leia.nextLine();
+							
+							System.out.println("\nQual sua idade? ");
+							idade = leia.nextInt();
+							
+								
+							System.out.println("\nQual peso em Kg? ");
+							peso = leia.nextInt();
+							
+								
+							System.out.println("\nQual sexo (F/M)? ");
+							sexo = leia.next().charAt(0);
+							
+								
+							System.out.println("\nQuantos meses desde a última doação? ");
+							ultimaDoacaoMeses = leia.nextInt(); 
+							
+							usuarios.atualizar(new UsuarioDoador(user, nome, cidade, estado, tipo, tipoSanguineo, idade, peso, sexo, ultimaDoacaoMeses));
+						}
+						case 2 -> {
+														
+							System.out.println("\nDigite o Nome do Hemocentro: ");
+							nome = leia.nextLine();
+							
+							System.out.println("\nDigite a Cidade: ");
+							cidade = leia.nextLine();
+							
+							System.out.println("\nDigite o Estado: ");
+							estado = leia.nextLine();
+							
+							System.out.println("\nDigite o Site: ");
+							site = leia.nextLine();
+							
+							System.out.println("\nDigite a rua: ");
+							rua = leia.nextLine();
+							
+							System.out.println("\nDigite o Telefone: ");
+							telefone = leia.nextLine();
+							
+							usuarios.atualizar(new UsuarioHemocentro(user, nome, cidade, estado, tipo, site, rua, telefone));
+						}
+						default ->{
+							System.out.println("Tipo de usuário inválido!");
 						}
 					}
 					
@@ -272,18 +361,12 @@ public class Menu {
 					
 				
 				
-						
-
-				
-				
-				
-				
-				
 
 				keyPress();
 				break;
 		case 10:
-				System.out.println("\n Listar Doadores ");
+				System.out.println("\n TODOS OS DOADORES: ");
+				usuarios.listarDoadores();
 				
 				
 				keyPress();
@@ -294,19 +377,24 @@ public class Menu {
 				keyPress();
 				break;
 		case 12:
-				System.out.println("\n Listar Doadores por Cidade ");
+				System.out.println("\n Listar Doadores por User ");
 				System.out.println(" ");
-				System.out.println("Digite a Cidade onde quer procurar: ");
-				cidade = leia.nextLine();
+				System.out.println("Digite o user: ");
+				user = leia.nextInt();
 				leia.nextLine();
 				
-				usuarios.ProcurarDoadoresPorCidade(cidade);
+				usuarios.ProcurarDoadoresPorUser(user);
 
 				keyPress();
 				break;
 		case 13:
-				System.out.println("\n Apagar Conta ");
-
+				System.out.println("\n APAGAR CONTA DO HEMOCENTRO ");
+				
+				System.out.println("Digite o user do Hemocentro: ");
+				user = leia.nextInt();
+					
+				usuarios.deletar(user);
+				
 				keyPress();
 				break;
 		case 14: System.out.println(" ");

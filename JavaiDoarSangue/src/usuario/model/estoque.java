@@ -1,4 +1,4 @@
-package Estoque;
+package usuario.model;
 
 import java.util.Scanner;
 
