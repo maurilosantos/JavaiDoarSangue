@@ -55,7 +55,7 @@ public class Menu {
 			System.out.println("                    JaVai Doar Sangue                ");
 			System.out.println("                                                     ");
 			System.out.println("           15 -> Dúvidas Frequentes                  ");
-			System.out.println("           16 -  Indique um Hemocentro               ");
+			System.out.println("           16 -> Indique um Hemocentro               ");
 			System.out.println("           17 -> Informações sobre Estoque           ");
 			System.out.println("           18 -> Missão, Visão e Valores             ");
 			System.out.println("           19 -> Nossa História                      ");
@@ -773,7 +773,7 @@ public class Menu {
 				System.out.println("\nEntre com o contado (email/telefone): ");
 				contatoHemocentro = leia.nextLine();							
 		         
-
+				System.out.println("\nIndicação feita com Sucesso! Em breve entraremos em contato. ");
 				keyPress();
 				break;
 		case 17:
