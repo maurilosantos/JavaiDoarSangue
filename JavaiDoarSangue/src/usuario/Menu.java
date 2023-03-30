@@ -4,14 +4,21 @@ import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import usuario.model.UsuarioDoador;
+import usuario.model.UsuarioHemocentro;
+import usuario.controller.UsuarioController;
 import usuario.util.Cores;
 
 public class Menu {
 	public static Scanner leia = new Scanner(System.in);
 
 	public static void main(String[] args) {
+		
+		UsuarioController usuarios = new UsuarioController();
 
-		int duvida, opcao = 0;
+		int duvida, opcao = 0, tipo, idade, peso, ultimaDoacaoMeses, ultimaCirurgiaMeses, user, numero = 0;
+		String nome, cidade, estado, recentementeDoente, tipoSanguineo, site, rua, telefone;
+		char sexo;
 
 		while (true) {
 
@@ -23,20 +30,20 @@ public class Menu {
 			System.out.println("*****************************************************");
 			System.out.println("                          DOADOR                     ");
 			System.out.println("                                                     ");
-			System.out.println("            1 - Login                                ");
-			System.out.println("            2 - Cadastro                             ");
+			System.out.println("            1 - Cadastro Doador -                    ");
+			System.out.println("            2 - Listar Doadores   -                  ");
 			System.out.println("            4 - Atualizar Dados                      ");
 			System.out.println("            5 - Apagar Conta                         ");
 			System.out.println("            6 - Sair                                 ");
 			System.out.println("                                                     ");
 			System.out.println("                        HEMOCENTRO                   ");
 			System.out.println("                                                     ");
-			System.out.println("            7 - Login                                ");
-			System.out.println("            8 - Estoque e Validade de Bolsas         ");
-			System.out.println("            9 - Visualizar os Agendamentos           ");
+			System.out.println("            7 - Cadastro Hemocentro  -               ");
+			System.out.println("            8 - Listar Hemocentro  -                 ");
+			System.out.println("            9 - Atualizar Dados do Hemocentro        ");
 			System.out.println("           10 - Listar Doadores                      ");
-			System.out.println("           11 - Listar Doadores Aptos                ");
-			System.out.println("           12 - Listar Doadores por Cidade           ");
+			System.out.println("           11 - Buscar Doadores Aptos                ");
+			System.out.println("           12 - Buscar Doadores por Cidade           ");
 			System.out.println("           13 - Apagar Conta                         ");
 			System.out.println("           14 - Sair                                 ");
 			System.out.println("                                                     ");
@@ -67,18 +74,97 @@ public class Menu {
 				leia.close();
 				System.exit(0);
 			}
+			
+			if (opcao == 1 || opcao == 7) {
+				System.out.println("\nCadastro de (1 - Doador ou 2 - Hemocentro): ");
+				tipo = leia.nextInt();
+				leia.nextLine();
+				
+				
+				if(tipo == 1) {
+				
+					
+				System.out.println("\nDigite o User: ");
+				user = leia.nextInt();
+				leia.nextLine();
+				
+				System.out.println("\nDigite o Nome: ");
+				nome = leia.nextLine();
+				
+				
+				System.out.println("\nDigite a Cidade: ");
+				cidade = leia.nextLine();
+				
+				System.out.println("\nDigite o Estado: ");
+				estado = leia.nextLine();
+							
+	
+				System.out.println("\nQual seu Tipo Sanguineo (A+/- ,B+/-, O+/-, AB+/-)?");
+				tipoSanguineo = leia.nextLine();
+				
+					
+				System.out.println("\nQual sua idade? ");
+				idade = leia.nextInt();
+				
+					
+				System.out.println("\nQual peso em Kg? ");
+				peso = leia.nextInt();
+				
+					
+				System.out.println("\nQual sexo (F/M)? ");
+				sexo = leia.next().charAt(0);
+				
+					
+				System.out.println("\nQuantos meses desde a última doação? ");
+				ultimaDoacaoMeses = leia.nextInt(); 
+				
+					
+					
+				usuarios.cadastrar(new UsuarioDoador(user, nome, cidade, estado, tipo, tipoSanguineo, idade, peso, sexo, ultimaDoacaoMeses));
+				} else if (tipo == 2) {
+					
+				System.out.println("\nDigite o User: ");
+				user = leia.nextInt();
+				leia.nextLine();
+					
+				System.out.println("\nDigite o Nome do Hemocentro: ");
+				nome = leia.nextLine();
+				
+				
+				System.out.println("\nDigite a Cidade: ");
+				cidade = leia.nextLine();
+				
+				System.out.println("\nDigite o Estado: ");
+				estado = leia.nextLine();
+				
+				System.out.println("\nDigite o Site: ");
+				site = leia.nextLine();
+				
+				System.out.println("\nDigite a rua: ");
+				rua = leia.nextLine();
+				
+				System.out.println("\nDigite o Telefone: ");
+				telefone = leia.nextLine();
+				
+				usuarios.cadastrar(new UsuarioHemocentro(user, nome, cidade, estado, tipo, site, rua, telefone));
+					
+					
+				}
+			}
 
-			switch (opcao) {
-		case 1:
-				System.out.println("\n Login - Doador");
-
-				keyPress();
-				break;
+		switch (opcao) {
+		case 1: System.out.println(" ");
+		keyPress();
+		break;
 		case 2:
-				System.out.println("\n Cadastro - Doador");
-
+				System.out.println("\n Listrar Doadores: ");
+				usuarios.listarDoadores();
+				
+				
+				
 				keyPress();
 				break;
+				
 		case 3:
 				System.out.println("\n Atualizar Dados e");
 
@@ -94,24 +180,112 @@ public class Menu {
 
 				keyPress();
 				break;
-		case 7:
-				System.out.println("\n Login");
-
-				keyPress();
-				break;
+		case 6: System.out.println(" ");
+		keyPress();
+		break;
+		case 7: System.out.println(" ");
+		keyPress();
+		break;
 		case 8:
-				System.out.println("\n Estoque e Validade de Bolsas ");
+			
+				System.out.println("\n Todos os Hemocentros Cadastrados: ");
+				usuarios.listarHemocentros();
+
 
 				keyPress();
 				break;
 		case 9:
-				System.out.println("\n Visualizar os Agendamentos ");
+				System.out.println("\n Atualizar Dados: ");
+								
+						
+				System.out.println("Digite o user da conta: ");
+				user = leia.nextInt();
+				
+				if (usuarios.buscarNaCollection(user) != null) {
+					
+					System.out.println("Digite o Nome: ");
+					nome = leia.nextLine();
+					leia.nextLine();
+					
+					System.out.println("Digite Cidade: ");
+					leia.nextLine();
+					cidade = leia.nextLine();
+					
+						
+					System.out.println("Digite Estado: ");
+					estado = leia.nextLine();
+					leia.nextLine();
+					
+					tipo = usuarios.retornaTipo(numero);
+					
+					switch(tipo) {
+						case 1 -> {
+							System.out.println("Tipo Sanguíneo: ");
+							tipoSanguineo = leia.nextLine();
+							
+							System.out.println("\nQual sua idade? ");
+							idade = leia.nextInt();
+							
+								
+							System.out.println("\nQual peso em Kg? ");
+							peso = leia.nextInt();
+							
+								
+							System.out.println("\nQual sexo (F/M)? ");
+							sexo = leia.next().charAt(0);
+							
+								
+							System.out.println("\nQuantos meses desde a última doação? ");
+							ultimaDoacaoMeses = leia.nextInt(); 
+							
+							usuarios.atualizar(new UsuarioDoador(user, nome, cidade, estado, tipo, tipoSanguineo, idade, peso, sexo, ultimaDoacaoMeses));
+						}
+						case 2 -> {
+														
+							System.out.println("\nDigite o Nome do Hemocentro: ");
+							nome = leia.nextLine();
+							
+							System.out.println("\nDigite a Cidade: ");
+							cidade = leia.nextLine();
+							
+							System.out.println("\nDigite o Estado: ");
+							estado = leia.nextLine();
+							
+							System.out.println("\nDigite o Site: ");
+							site = leia.nextLine();
+							
+							System.out.println("\nDigite a rua: ");
+							rua = leia.nextLine();
+							
+							System.out.println("\nDigite o Telefone: ");
+							telefone = leia.nextLine();
+							
+							usuarios.atualizar(new UsuarioHemocentro(user, nome, cidade, estado, tipo, site, rua, telefone));
+						}
+						default ->{
+							System.out.println("Tipo de conta inválido!");
+						}
+					}
+					
+				} else
+					System.out.println("\nConta não encontrada!");
+					
+				
+				
+						
+
+				
+				
+				
+				
+				
 
 				keyPress();
 				break;
 		case 10:
 				System.out.println("\n Listar Doadores ");
-
+				
+				
 				keyPress();
 				break;
 		case 11:
@@ -121,6 +295,12 @@ public class Menu {
 				break;
 		case 12:
 				System.out.println("\n Listar Doadores por Cidade ");
+				System.out.println(" ");
+				System.out.println("Digite a Cidade onde quer procurar: ");
+				cidade = leia.nextLine();
+				leia.nextLine();
+				
+				usuarios.ProcurarDoadoresPorCidade(cidade);
 
 				keyPress();
 				break;
@@ -129,6 +309,9 @@ public class Menu {
 
 				keyPress();
 				break;
+		case 14: System.out.println(" ");
+		keyPress();
+		break;
 		case 15:
 				System.out.println("\n DÚVIDAS FREQUENTES\n\n ");
 				System.out.println("*****************************************************");

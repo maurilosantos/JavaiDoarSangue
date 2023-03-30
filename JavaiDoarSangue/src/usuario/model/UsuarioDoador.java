@@ -1,20 +1,26 @@
 package usuario.model;
 
 public class UsuarioDoador extends Usuario {
-	
+
 	private String tipoSanguineo;
-	private int  idade;
-	private int  peso;
+	private int idade;
+	private float peso;
 	private char sexo;
 	private int ultimaDoacaoMeses;
-	private int ultimaCirurgiaMeses;
-	private String recentementeDoente;
 	
-	public UsuarioDoador(String email, String senha, String nome, String cidade, String estado) {
-		super(email, senha, nome, cidade, estado);
+
+	public UsuarioDoador(int user, String nome, String cidade, String estado, int tipo, String tipoSanguineo,
+			int idade, float peso, char sexo, int ultimaDoacaoMeses) {
+		super(user, nome, cidade, estado, tipo);
+		this.tipoSanguineo = tipoSanguineo;
+		this.idade = idade;
+		this.peso = peso;
+		this.sexo = sexo;
+		this.ultimaDoacaoMeses = ultimaDoacaoMeses;
+		
 		
 	}
-	
+
 	public String getTipoSanguineo() {
 		return tipoSanguineo;
 	}
@@ -23,30 +29,25 @@ public class UsuarioDoador extends Usuario {
 		this.tipoSanguineo = tipoSanguineo;
 	}
 
-
 	public int getIdade() {
 		return idade;
 	}
-
 
 	public void setIdade(int idade) {
 		this.idade = idade;
 	}
 
-
-	public int getPeso() {
+	public float getPeso() {
 		return peso;
 	}
 
-	public void setPeso(int peso) {
+	public void setPeso(float peso) {
 		this.peso = peso;
 	}
-
 
 	public char getSexo() {
 		return sexo;
 	}
-
 
 	public void setSexo(char sexo) {
 		this.sexo = sexo;
@@ -60,30 +61,34 @@ public class UsuarioDoador extends Usuario {
 		this.ultimaDoacaoMeses = ultimaDoacaoMeses;
 	}
 
-	public int getUltimaCirurgiaMeses() {
-		return ultimaCirurgiaMeses;
+	
+
+	@Override
+	public void visualizar() {
+		super.visualizar();
+		System.out.println("\nTipo Sanguíneo: " + tipoSanguineo + "\nSexo: " + sexo + "\nPeso: " + peso + "\n");
+
 	}
-
-
-	public void setUltimaCirurgiaMeses(int ultimaCirurgiaMeses) {
-		this.ultimaCirurgiaMeses = ultimaCirurgiaMeses;
-	}
-
-
-
-	public String getRecentementeDoente() {
-		return recentementeDoente;
-	}
-
-
-	public void setRecentementeDoente(String recentementeDoente) {
-		this.recentementeDoente = recentementeDoente;
-	}
-
 
 	
-	public void visualizar() {
+	public void verificarApto(char M, char F, String Sim) {
+
+		if (this.idade >= 17 && this.idade <= 69 && this.ultimaDoacaoMeses >= 2 && sexo == M) {
+			System.out.println("\n Apto. ");	
+		}
 		
-		
+		else if (this.idade >= 17 && this.idade <= 69 && this.ultimaDoacaoMeses >= 3 && sexo == F ) {
+			System.out.println("\n Apta. ");	
+		} else {
+			System.out.println("\nNão Apto(a) ");
+		}
+
 	}
+	
+	
+	
+	
+	
+	
+
 }

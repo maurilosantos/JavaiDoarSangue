@@ -1,45 +1,37 @@
 package usuario.model;
 
 public abstract class Usuario {
-	
-	private String email;
-	private String senha;
+	private int user;
 	private String nome;
 	private String cidade;
 	private String estado;
+	private int tipo;
 	
 	// constructor
 
-	public Usuario(String email, String senha, String nome, String cidade, String estado) {
-		this.email = email;
-		this.senha = senha;
+	public Usuario(int user, String nome, String cidade, String estado, int tipo) {
+		this.user = user;
 		this.nome = nome;
 		this.cidade = cidade;
 		this.estado = estado;
+		this.tipo = tipo;
 	}
 	
 	// gets and sets
 
-	public String getEmail() {
-		return email;
+
+	public int getUser() {
+		return user;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setUser(int user) {
+		this.user = user;
 	}
 
 	public String getNome() {
 		return nome;
 	}
-
+	
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
@@ -59,13 +51,22 @@ public abstract class Usuario {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
- 
+	
+	
+	public int getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
+	}
+
 	
 	// metodos especificos
 	
 	public void visualizar() {
 		
-		System.out.println("\n Nome: "+nome+"\n Cidade: "+cidade+"\n Estado: "+estado);
+		System.out.println("\nUser: "+user+"\nNome: "+nome+"\nCidade: "+cidade+"\nEstado: "+estado);
 	}
 
 
