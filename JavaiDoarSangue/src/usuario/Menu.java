@@ -21,7 +21,7 @@ public class Menu {
 		int duvida, opcao = 0, tipo, idade, peso, ultimaDoacaoMeses, ultimaCirurgiaMeses, user, numero = 0,
 				quantidadeDeBolsas, tipoAmais, tipoAmenos, tipoBmais, tipoBmenos, tipoABmais, tipoABmenos,
 				tipoOmais, tipoOmenos;
-		String nome, cidade, estado, recentementeDoente, tipoSanguineo, site, rua, telefone, nomeHemocentro, cidadeHemocentro, contatoHemocentro;
+		String nome, cidade, estado, recentementeDoente, tipoSanguineo, site, rua, telefone,  nomeHemocentro, cidadeHemocentro, contatoHemocentro;
 		char sexo;
 
 		System.out.println(Cores.TEXT_WHITE_BOLD_BRIGHT + Cores.ANSI_RED_BACKGROUND+"                ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
@@ -649,209 +649,209 @@ public class Menu {
 				case 1:
 					System.out.println("\nPor que o diabético não pode doar sangue?\r\n"
 							+ "\r\n"
-							+ "Diabético que não pode doar sangue é aquele que chamamos de insulino-dependente; ou seja, aquele que necessita"
-							+ " de insulina para manter seu metabolismo de açúcar próximo da normalidade. Esses pacientes têm importantes "
-							+ "alterações do sistema cardiovascular e, em consequência disto, durante ou logo após a doação de sangue, podem apresentar"
-							+ " alguma reação que agrave seu estado de saúde.");
+							+ "\nDiabético que não pode doar sangue é aquele que chamamos de insulino-dependente; ou seja, aquele que necessita"
+							+ "\nde insulina para manter seu metabolismo de açúcar próximo da normalidade. Esses pacientes têm importantes "
+							+ "\nalterações do sistema cardiovascular e, em consequência disto, durante ou logo após a doação de sangue, podem apresentar"
+							+ "\nalguma reação que agrave seu estado de saúde.");
 					break;
 				case 2:
 					System.out.println("\nPor que pessoas com peso inferior a 50 kg não podem doar sangue?\r\n"
 							+ "\r\n"
-							+ "O volume de sangue total a ser coletado é diretamente relacionado ao peso do doador. Para os homens não pode exceder"
-							+ " a 9ml / kg peso e, para as mulheres, a 8ml / kg peso. O anticoagulante presente na bolsa de coleta liga-se ao sangue "
-							+ "impedindo que este coagule. O volume de anticoagulante da bolsa é padronizado para um mínimo de 400ml de sangue. Logo,"
-							+ " uma pessoa com peso inferior a 50 kg não poderia doar o volume mínimo.");
+							+ "\nO volume de sangue total a ser coletado é diretamente relacionado ao peso do doador. Para os homens não pode exceder"
+							+ "\na 9ml / kg peso e, para as mulheres, a 8ml / kg peso. O anticoagulante presente na bolsa de coleta liga-se ao sangue "
+							+ "\nimpedindo que este coagule. O volume de anticoagulante da bolsa é padronizado para um mínimo de 400ml de sangue. Logo,"
+							+ "\numa pessoa com peso inferior a 50 kg não poderia doar o volume mínimo.");
 					break;
 				case 3:
 					System.out.println("\nMenores de 18 anos podem doar?\r\n"
 							+ "\r\n"
-							+ "De acordo com a legislação brasileira que regulamenta as normas técnicas a serem aplicadas em todos os bancos de sangue"
-							+ " do país, o menor de idade poderá doar sangue a partir dos 16 anos. Informações sobre documentos necessários e formulário"
-							+ " de autorização podem ser acessados pela página de requisitos básicos para doação.");
+							+ "\nDe acordo com a legislação brasileira que regulamenta as normas técnicas a serem aplicadas em todos os bancos de sangue"
+							+ "\ndo país, o menor de idade poderá doar sangue a partir dos 16 anos. Informações sobre documentos necessários e formulário"
+							+ "\nde autorização podem ser acessados pela página de requisitos básicos para doação.");
 					break;
 				case 4:
 					System.out.println("\nA doação de sangue é permitida durante a amamentação?\r\n"
 							+ "\r\n"
-							+ "Não. A mulher que está amamentando não pode doar sangue, a menos que o parto tenha ocorrido há mais de um ano.");
+							+ "\nNão. A mulher que está amamentando não pode doar sangue, a menos que o parto tenha ocorrido há mais de um ano.");
 					break;
 				case 5:
 					System.out.println("\nQual o tempo que o organismo leva para repor o sangue doado?\r\n"
 							+ "\r\n"
-							+ "A reposição do volume de plasma ocorre em 24 horas e a dos glóbulos vermelhos em 4 semanas. Entretanto, para o organismo atingir"
-							+ " o mesmo nível de estoque de ferro que apresentava antes da doação, são necessárias 8 semanas para os homens e 12 semanas para as mulheres.");
+							+ "\nA reposição do volume de plasma ocorre em 24 horas e a dos glóbulos vermelhos em 4 semanas. Entretanto, para o organismo atingir"
+							+ "\no mesmo nível de estoque de ferro que apresentava antes da doação, são necessárias 8 semanas para os homens e 12 semanas para as mulheres.");
 					break;
 				case 6:
 					System.out.println("\nQual o intervalo recomendado para doação de plaquetas?\r\n"
 							+ "\r\n"
-							+ "O intervalo mínimo entre uma doação de sangue e uma doação de plaquetas é de 56 dias; entre plaquetas e sangue, 72 horas."
-							+ " O número máximo de doações de plaquetas, por mês, é de 4 doações; e por ano, 24 doações.");
+							+ "\nO intervalo mínimo entre uma doação de sangue e uma doação de plaquetas é de 56 dias; entre plaquetas e sangue, 72 horas."
+							+ "\nO número máximo de doações de plaquetas, por mês, é de 4 doações; e por ano, 24 doações.");
 					break;
 				case 7:
 					System.out.println("\nQuais as vacinas que impedem a doação? Quanto tempo depois de ter tomado a vacina a pessoa poderá doar sangue?\r\n"
 							+ "\r\n"
-							+ "Vacinas compostas de vírus ou bactérias vivos e atenuados (ex.: sarampo, poliomielite oral, febre amarela) necessitam de 3 a 4"
-							+ " semanas de intervalo para a doação. Já as vacinas compostas de vírus ou bactérias mortas, toxóides ou recombinantes (ex.: tétano, "
-							+ "poliomielite salk, etc.) exigem um período mínimo de 48 horas para doação de sangue desde que o candidato não apresente qualquer reação"
-							+ " decorrente da vacinação. Vacinação anti-rábica após exposição animal exige período mínimo de 01 ano para a doação de sangue.");
+							+ "\nVacinas compostas de vírus ou bactérias vivos e atenuados (ex.: sarampo, poliomielite oral, febre amarela) necessitam de 3 a 4"
+							+ "\nsemanas de intervalo para a doação. Já as vacinas compostas de vírus ou bactérias mortas, toxóides ou recombinantes (ex.: tétano, "
+							+ "\npoliomielite salk, etc.) exigem um período mínimo de 48 horas para doação de sangue desde que o candidato não apresente qualquer reação"
+							+ "\ndecorrente da vacinação. Vacinação anti-rábica após exposição animal exige período mínimo de 01 ano para a doação de sangue.");
 					break;
 				case 8:
 					System.out.println("\nQual o conceito atual de \"grupo de risco\"?\r\n"
 							+ "\r\n"
-							+ "Na realidade, o termo mais correto seria \"comportamento de risco\"; ou seja, o comportamento do indivíduo que o deixaria mais exposto"
-							+ " ao risco de adquirir uma determinada doença ou infecção.");
+							+ "\nNa realidade, o termo mais correto seria \"comportamento de risco\"; ou seja, o comportamento do indivíduo que o deixaria mais exposto"
+							+ "\nao risco de adquirir uma determinada doença ou infecção.");
 					break;
 				case 9:
 					System.out.println("\nPor que só 1 dia de abono pela doação de sangue?\r\n"
 							+ "\r\n"
-							+ "É o que estabelecem a CLT e a CLF.");
+							+ "\nÉ o que estabelecem a CLT e a CLF.");
 					break;
 				case 10:
 					System.out.println("\nOs exames sorológicos são realizados individualmente?\r\n"
 							+ "\r\n"
-							+ "Sim, os testes sorológicos são realizados individualmente; ou seja, em cada amostra isoladamente.");
+							+ "\nSim, os testes sorológicos são realizados individualmente; ou seja, em cada amostra isoladamente.");
 					break;
 				case 11:
 					System.out.println("\nO material usado na coleta de sangue é mesmo seguro?\r\n"
 							+ "\r\n"
-							+ "Sim, todo o material usado para a coleta de sangue é individual, descartável, estéril e apirogênico (não causa febre). Não há nenhum"
-							+ " risco de o doador adquirir uma doença infecciosa com a doação de sangue.");
+							+ "\nSim, todo o material usado para a coleta de sangue é individual, descartável, estéril e apirogênico (não causa febre). Não há nenhum"
+							+ "\nrisco de o doador adquirir uma doença infecciosa com a doação de sangue.");
 					break;
 				case 12:
 					System.out.println("\nComo se pega hepatite? Quais são os principais sintomas?\r\n"
 							+ "\r\n"
-							+ "Existem três tipos principais de hepatite viral: Tipo A, Tipo B e Tipo C.\r\n"
-							+ "A do tipo A é de contaminação através de água e alimentos contaminados e por contato oral ou fecal.\r\n"
-							+ "A do tipo B é de contaminação sexual ou parenteral; ou seja, agulhas e equipamentos contaminados ou transfusão sangue.\r\n"
-							+ "A do tipo C é de contaminação predominantemente parenteral; porém, outras formas pouco definidas podem ser envolvidas.\r\n"
-							+ "Os sinais mais frequentes da hepatite são: icterícia (amarelamento dos olhos), urina escura e fezes claras. Esses sinais são mais"
-							+ " comuns na hepatite A. Na hepatite B ocorrem em 10 a 25% dos casos e na hepatite C, em apenas cerca de 5% dos casos. Os demais sintomas"
-							+ " da hepatite são poucos específicos e lembram um quadro de gripe forte.");
+							+ "\nExistem três tipos principais de hepatite viral: Tipo A, Tipo B e Tipo C.\r\n"
+							+ "\nA do tipo A é de contaminação através de água e alimentos contaminados e por contato oral ou fecal.\r\n"
+							+ "\nA do tipo B é de contaminação sexual ou parenteral; ou seja, agulhas e equipamentos contaminados ou transfusão sangue.\r\n"
+							+ "\nA do tipo C é de contaminação predominantemente parenteral; porém, outras formas pouco definidas podem ser envolvidas.\r\n"
+							+ "\nOs sinais mais frequentes da hepatite são: icterícia (amarelamento dos olhos), urina escura e fezes claras. Esses sinais são mais"
+							+ "\ncomuns na hepatite A. Na hepatite B ocorrem em 10 a 25% dos casos e na hepatite C, em apenas cerca de 5% dos casos. Os demais sintomas"
+							+ "\nda hepatite são poucos específicos e lembram um quadro de gripe forte.");
 					break;
 				case 13:
 					System.out.println("\nQual o tipo mais comum de hepatite?\r\n"
 							+ "\r\n"
-							+ "A hepatite A. Em cerca de 85 % da população brasileira encontramos anticorpos contra o vírus da hepatite A, os quais são indicadores"
-							+ " de contato prévio com esse agente.");
+							+ "\nA hepatite A. Em cerca de 85 % da população brasileira encontramos anticorpos contra o vírus da hepatite A, os quais são indicadores"
+							+ "\nde contato prévio com esse agente.");
 					break;
 				case 14:
 					System.out.println("\nPor que só pode doar sangue quando se teve hepatite antes dos 11 anos de idade?\r\n"
 							+ "\r\n"
-							+ "Porque antes dos 11 anos de idade, a probabilidade de o candidato que tenha tido hepatite do tipo A é de quase 100%. Este fato já"
-							+ " foi confirmado em vários estudos epidemiológicos. Como a hepatite A não deixa seqüelas nem partículas virais remanescentes após a"
-							+ " cura, não há contra-indicação em doar sangue após esse tipo de hepatite.");
+							+ "\nPorque antes dos 11 anos de idade, a probabilidade de o candidato que tenha tido hepatite do tipo A é de quase 100%. Este fato já"
+							+ "\nfoi confirmado em vários estudos epidemiológicos. Como a hepatite A não deixa seqüelas nem partículas virais remanescentes após a"
+							+ "\ncura, não há contra-indicação em doar sangue após esse tipo de hepatite.");
 					break;
 				case 15:
 					System.out.println("\nApós a doação, quanto tempo leva para o sangue ser processado?\r\n"
 							+ "\r\n"
-							+ "Na JAVai Doar Sangue, o sangue doado é processado em no máximo 6 horas após a doação.");
+							+ "\nNa JAVai Doar Sangue, o sangue doado é processado em no máximo 6 horas após a doação.");
 					break;
 				case 16:
 					System.out.println("\nQual o procedimento para se realizar uma autodoação de sangue?\r\n"
 							+ "\r\n"
-							+ "Primeiramente, deverá haver uma solicitação do médico que está assistindo ao paciente, autorizando e solicitando a transfusão"
-							+ " autóloga. Depois, o paciente deverá ser submetido aos mesmos procedimentos utilizados na doação regular. O médico da Fundação"
-							+ " Pró-Sangue irá avaliar as condições clínicas do paciente, a real necessidade da autotransfusão e a freqüência das doações.");
+							+ "\nPrimeiramente, deverá haver uma solicitação do médico que está assistindo ao paciente, autorizando e solicitando a transfusão"
+							+ "\nautóloga. Depois, o paciente deverá ser submetido aos mesmos procedimentos utilizados na doação regular. O médico da Fundação"
+							+ "\nPró-Sangue irá avaliar as condições clínicas do paciente, a real necessidade da autotransfusão e a freqüência das doações.");
 					break;
 				case 17:
 					System.out.println("\nPor que não podemos aceitar doadores provenientes de área endêmica para Malária?\r\n"
 							+ "\r\n"
-							+ "Ainda não há um teste sensível para detecção de malária que possa ser aplicado rotineiramente em bancos de sangue. Por essa razão,"
-							+ " excluímos temporariamente os indivíduos que estiveram em zona de malária com o objetivo de diminuir o risco de ocorrência de Malária"
-							+ " transfusional.");
+							+ "\nAinda não há um teste sensível para detecção de malária que possa ser aplicado rotineiramente em bancos de sangue. Por essa razão,"
+							+ "\nexcluímos temporariamente os indivíduos que estiveram em zona de malária com o objetivo de diminuir o risco de ocorrência de Malária"
+							+ "\ntransfusional.");
 					break;
 				case 18:
 					System.out.println("\nQual o período de impedimento para doação para indivíduos que residiram ou que visitaram uma região endêmica de Malária?\r\n"
 							+ "\r\n"
-							+ "Se residiu em área endêmica para malária ou se ficou pouco tempo, aguardar 12 meses.");
+							+ "\nSe residiu em área endêmica para malária ou se ficou pouco tempo, aguardar 12 meses.");
 					break;
 				case 19:
 					System.out.println("\nExiste vacina para Malária?\r\n"
 							+ "\r\n"
-							+ "Não. Não existe vacina para Malária. Pelo nome, a vacina antiamarílica é confundida com vacina para malária. Entretanto, "
-							+ "esta garante imunidade contra a febre amarela.");
+							+ "\nNão. Não existe vacina para Malária. Pelo nome, a vacina antiamarílica é confundida com vacina para malária. Entretanto, "
+							+ "\nesta garante imunidade contra a febre amarela.");
 					break;
 				case 20:
 					System.out.println("\nPode-se fazer sexo depois da doação de sangue?\r\n"
 							+ "\r\n"
-							+ "Não há qualquer contra-indicação para realização de atividade sexual após a doação de sangue ou de plaquetas.");
+							+ "\nNão há qualquer contra-indicação para realização de atividade sexual após a doação de sangue ou de plaquetas.");
 					break;
 				case 21:
 					System.out.println("\nComo é armazenado o sangue? Em geladeira? Em que temperatura?\r\n"
 							+ "\r\n"
-							+ "Os glóbulos vermelhos são armazenados em geladeira, à temperatura entre 2 e 6ºC. As plaquetas são armazenadas em temperatura "
-							+ "ambiente entre 20 e 24ºC. O plasma é armazenado congelado à temperatura de 18ºC negativos.");
+							+ "\nOs glóbulos vermelhos são armazenados em geladeira, à temperatura entre 2 e 6ºC. As plaquetas são armazenadas em temperatura "
+							+ "\nambiente entre 20 e 24ºC. O plasma é armazenado congelado à temperatura de 18ºC negativos.");
 					break;
 				case 22:
 					System.out.println("\nDepois de quanto tempo as pessoas que fizeram piercing, tatuagem, maquiagem definitiva ou micropigmentação "
 							+ "(sobrancelhas, lábios, etc.) podem doar sangue?\r\n"
 							+ "\r\n"
-							+ "Tatuagem, maquiagem definitiva e micropigmentação: após 12 meses do procedimento; se feitas em estabelecimento adequado "
-							+ "(seguro) e com todos os cuidados necessários (assepsia correta e material descartável), o prazo é de 6 meses. Piercing: se "
-							+ "feito em estabelecimento sem condições de avaliar a antissepsia: aguardar 12 meses após realização; com material descartável"
-							+ " e feito em estabelecimento apropriado: aguardar 6 meses após realização; se feito na mucosa oral ou genital: inapto enquanto "
-							+ "estiver com o piercing e apto após 12 meses da retirada.");
+							+ "\nTatuagem, maquiagem definitiva e micropigmentação: após 12 meses do procedimento; se feitas em estabelecimento adequado "
+							+ "\n(seguro) e com todos os cuidados necessários (assepsia correta e material descartável), o prazo é de 6 meses. Piercing: se "
+							+ "\nfeito em estabelecimento sem condições de avaliar a antissepsia: aguardar 12 meses após realização; com material descartável"
+							+ "\ne feito em estabelecimento apropriado: aguardar 6 meses após realização; se feito na mucosa oral ou genital: inapto enquanto "
+							+ "\nestiver com o piercing e apto após 12 meses da retirada.");
 					break;
 				case 23:
 					System.out.println("\nQuando criança tive desmaios, mas estou curado(a). Por que não posso doar sangue?\r\n"
 							+ "\r\n"
-							+ "Candidatos com histórico de convulsão no passado podem doar sangue 03 anos após suspensão do tratamento e sem relato de crise "
-							+ "nesse período.");
+							+ "\nCandidatos com histórico de convulsão no passado podem doar sangue 03 anos após suspensão do tratamento e sem relato de crise "
+							+ "\nnesse período.");
 					break;
 				case 24:
 					System.out.println("\nHipo ou Hipertireoidismo impede a doação?\r\n"
 							+ "\r\n"
-							+ "Hipotireoidismo controlado não impede.\r\n"
-							+ "Hipertireoidismo: inapto por 24 meses após suspensão de drogas antitireoidianas");
+							+ "\nHipotireoidismo controlado não impede.\r\n"
+							+ "\nHipertireoidismo: inapto por 24 meses após suspensão de drogas antitireoidianas");
 					break;
 				case 25:
 					System.out.println("\nA hipoglicemia impede a doação?\r\n"
 							+ "\r\n"
-							+ "Não, desde que o candidato esteja assintomático no dia da doação.");
+							+ "\nNão, desde que o candidato esteja assintomático no dia da doação.");
 					break;
 				case 26:
 					System.out.println("\nPor que o limite de 450ml de sangue por bolsa?\r\n"
 							+ "\r\n"
-							+ "Devido ao volume de anticoagulante presente na bolsa, o que é padronizado para anticoagular no máximo esse volume de sangue.");
+							+ "\nDevido ao volume de anticoagulante presente na bolsa, o que é padronizado para anticoagular no máximo esse volume de sangue.");
 					break;
 				case 27:
 					System.out.println("\nQuanto tempo depois das cirurgias (pequeno, médio e grande porte) a pessoa poderá doar sangue?\r\n"
 							+ "\r\n"
-							+ "Candidatos submetidos a cirurgia de grande porte devem ser recusados de 6 meses a 1 ano. Para cirurgias de pequeno e médio portes, "
-							+ "a recusa é por 3 meses. Para cirurgia a laser, aguardar 1 semana após o procedimento, se o local não estiver inflamado. Para cirurgias "
-							+ "odontológicas, extração ou manipulação dentária, o prazo é de 7 dias após o procedimento; com anestesia geral, 1 mês após o término de "
-							+ "tratamento.");
+							+ "\nCandidatos submetidos a cirurgia de grande porte devem ser recusados de 6 meses a 1 ano. Para cirurgias de pequeno e médio portes, "
+							+ "\na recusa é por 3 meses. Para cirurgia a laser, aguardar 1 semana após o procedimento, se o local não estiver inflamado. Para cirurgias "
+							+ "\nodontológicas, extração ou manipulação dentária, o prazo é de 7 dias após o procedimento; com anestesia geral, 1 mês após o término de "
+							+ "\ntratamento.");
 					break;
 				case 28:
 					System.out.println("\nSe a pessoa teve rubéola, depois de quanto tempo pode voltar a doar?\r\n"
 							+ "\r\n"
-							+ "Apto 2 semanas após a cura.");
+							+ "\nApto 2 semanas após a cura.");
 					break;
 				case 29:
 					System.out.println("\nO doador de sangue tem direito à folga no trabalho?\r\n"
 							+ "\r\n"
-							+ "Sim, o doador tem direito a um (01) dia de folga no trabalho em cada 12 meses trabalhados, desde que a doação esteja devidamente "
-							+ "comprovada, de acordo com os termos previstos no Decreto-Lei nº 5.452, de 1º de maio de 1943 (Consolidação das Leis do Trabalho). "
-							+ "Esse direito também se estende ao funcionário público civil de autarquia ou militar, conforme preconizam a Lei Federal nº 1.075, de "
-							+ "27 de março de 1950, bem como a Lei EStadual nº 3.365, de 6 de junho de 1956. Mas apesar da legislação vigente, cumpre ressaltar que"
-							+ " a doação de sangue é um gesto voluntário e altruísta e, portanto, não deve ser encarada como um benefício próprio.");
+							+ "\nSim, o doador tem direito a um (01) dia de folga no trabalho em cada 12 meses trabalhados, desde que a doação esteja devidamente "
+							+ "\ncomprovada, de acordo com os termos previstos no Decreto-Lei nº 5.452, de 1º de maio de 1943 (Consolidação das Leis do Trabalho). "
+							+ "\nEsse direito também se estende ao funcionário público civil de autarquia ou militar, conforme preconizam a Lei Federal nº 1.075, de "
+							+ "\n27 de março de 1950, bem como a Lei EStadual nº 3.365, de 6 de junho de 1956. Mas apesar da legislação vigente, cumpre ressaltar que"
+							+ "\n a doação de sangue é um gesto voluntário e altruísta e, portanto, não deve ser encarada como um benefício próprio.");
 					break;
 				case 30:
 					System.out.println("\nPor que não se pode consumir alimentos gordurosos nas quatro horas que antecedem à doação?\r\n"
 							+ "\r\n"
-							+ "O excesso de gordura pode prejudicar os testes e impedir a liberação do sangue.");
+							+ "\nO excesso de gordura pode prejudicar os testes e impedir a liberação do sangue.");
 					break;
 				case 31:
 					System.out.println("\nA JAVai Doar Sangue realiza cadastro para doação de medula óssea?\r\n"
 							+ "\r\n"
-							+ "    Não. A JAVai Doar Sangue efetua a coleta de sangue total, plaquetas e hemácias duplas. Para se cadastrar como doador de medula "
-							+ "óssea, pesquise a instituição mais próxima em http://redome.inca.gov.br/.");
+							+ "\nNão. A JAVai Doar Sangue efetua a coleta de sangue total, plaquetas e hemácias duplas. Para se cadastrar como doador de medula "
+							+ "\nóssea, pesquise a instituição mais próxima em http://redome.inca.gov.br/.");
 					break;
 				case 32:
 					System.out.println("\nA febre amarela é impedimento à doação?\r\n"
 							+ "\r\n"
-							+ "    Quem tomou a vacina contra a febre amarela deve aguardar 04 semanas para doar.\r\n"
-							+ "    Já aqueles que contraíram a doença devem aguardar 6 meses após recuperação completa (clínica e laboratorial).\r\n"
-							+ "    Já quem esteve em região onde há surto da doença deve aguardar 30 dias após o retorno.");
+							+ "\nQuem tomou a vacina contra a febre amarela deve aguardar 04 semanas para doar.\r\n"
+							+ "\nJá aqueles que contraíram a doença devem aguardar 6 meses após recuperação completa (clínica e laboratorial).\r\n"
+							+ "\nJá quem esteve em região onde há surto da doença deve aguardar 30 dias após o retorno.");
 					break;
 				default:
 					System.out.println("\nOpção Inválida" + Cores.TEXT_RESET);
@@ -861,7 +861,6 @@ public class Menu {
 					
 					// volta pra menu principal
 				}
-
 				keyPress();
 				break;
 		case 16:
