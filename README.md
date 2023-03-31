@@ -6,15 +6,19 @@
 <h2>um sistema feito em java que conecta doadores e hemocentros</h2>
 </div>
 
+<div align="center">
+<h3>Descomplicamos agendamentos de doação e auxiliamos os hemocentros com o controle de estoque</h3>
+</div>
+
 <div>
-<p>Tecnologias utilizadas: <br>
+<h4>Tecnologias utilizadas: <br>
 - Spring Tool Suite IDE;<br>
 - Eclipse IDE;<br>
 - Git e GitHub;<br>
 - SCRUM;<br>
 - Miro;<br>
 - CRUD.<br>
-</p>
+</h4>
 </div>
 
 <div align="center">
