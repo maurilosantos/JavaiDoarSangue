@@ -62,7 +62,7 @@ public class Menu {
 			System.out.println(Cores.TEXT_WHITE_BOLD_BRIGHT + Cores.ANSI_RED_BACKGROUND
 					+ "**************************************************************************************************************************************************************                          ");
 			System.out.println("                                                                                                                                                                               ");
-			System.out.println("                                                             Projeto JaVai Doar SANGUE                                                                                         ");
+			System.out.println("                                                             Projeto JaVai Doar Sangue                                                                                         ");
 			System.out.println("                                                                                                                                                                               ");
 			System.out.println("*****************************************************************************************************************************************************                          ");
 			System.out.println("                                                                      DOADOR                                                                                                   ");
